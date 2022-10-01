@@ -17,7 +17,7 @@ function contact(event){
     event.preventDefault();
     emailjs
     .sendForm(
-       
+        
     ).then (() => {
         loading.classList.remove("modal__overlay--visible")
         success.classList += " modal__overlay--visible";

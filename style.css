@@ -5,7 +5,9 @@
    box-sizing: border-box;
    font-family: 'Roboto', sans-serif;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 
 li{
     list-style: none;
@@ -527,4 +529,52 @@ footer{
 .footer__social--link, 
 .footer__copyright{
     color: #fff;
+}
+
+
+@media (max-width: 768px){
+    .title{
+        font-size: 80px;
+    }
+    .header__para{
+        font-size: 20px;
+    }
+    .modal{
+        top: 0;
+        left: 0;
+        transform: none;
+        height: auto;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .modal_half{
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px){
+    .title{
+        font-size: 52px;
+    }
+    .header__para{
+        font: 16px;
+    }
+    .nav__link:first-child{
+        display: none;
+    }
+    .project__description--para{
+        display: none;
+    }
+    .project__description{
+        left: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .project__description--sub-title{
+        margin-bottom: 8px;
+    }
+    .modal_half{
+        padding: 40px;
+    }
 }
