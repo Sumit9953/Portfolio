@@ -7,6 +7,15 @@
     <title>sumit</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/09ae7a197c.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("9UjCA7o-CK2T3D06L");
+   })();
+</script>
 </head>
 <body>
     <section id="landing-page">
@@ -29,14 +38,14 @@
                     link__hover-effect--black
                     ">Project</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black
                     ">Contacts</a>
                 </li>
-                <li class="nav__link click">
+                <li class="nav__link click" onclick="toggleContrast()" >
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect--black
@@ -47,10 +56,10 @@
         <header class="header">
             <div class="header__content">
                 <h1 class="title">Hey</h1>
-                <h1 class="title orange">I'm Sumit</h1>
+                <h1 class="title"><span class="orange">I'm Sumit</span></h1>
                 <p class="header__para">Lorem ipsum, <b class="orange">dolor sit amet consectetur</b>  adipisicing elit. 
                     <br>
-                    Quasi non rerum quod maxime provident in odit quibusdam adipisci <b class="orange">about me</b></p>
+                    Quasi non rerum quod maxime provident in odit quibusdam adipisci <b class="orange click" onclick="toggleModal()">about me</b></p>
                     <div class="social__list">
                         <a href="" class="social__link click">
                             <i class="fab fa-linkedin-in"></i>
@@ -64,7 +73,7 @@
                     </div>
             </div>
         </header>
-        <button class="mail__btn click">
+        <button class="mail__btn click" onclick="toggleModal()">
             <i class="fas fa-envelope"></i>
         </button>
         <a href="#projects" class="scroll">
@@ -117,24 +126,25 @@
                 </div>
             </div>
             <div class="modal_half modal_contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
                 <h3 class="modal__title modal__title--contact">
                     Let's have a chat!
                 </h3>
                 <h4 class="modal__sub-title modal__sub-title--contact">
                     I'm currently open to new opportunties
                 </h4>
-                <form id="contact__form" action="">
+                <form id="contact__form" onsubmit="contact(event)">
                     <div class="form__item">
                         <label class="form__item--lable" for="name">Name</label>
-                        <input class="input" type="text" name="user_name" required>
+                        <input class="input" type="text" name="user_name" >
                     </div>
                     <div class="form__item">
                         <label class="form__item--lable" for="email">Email</label>
-                        <input class="input" type="email" name="user_email" required>
+                        <input class="input" type="email" name="user_email" >
                     </div>
                     <div class="form__item">
                         <label class="form__item--lable" for="message">Message</label>
-                        <textarea class="input" type="text" name="message" required></textarea>
+                        <textarea class="input" type="text" name="message" ></textarea>
                     </div>
                     <button id="contact__submit" class="form__submit">
                         Sent it my way
@@ -147,7 +157,6 @@
                     Thanks for the message! Looking forward to speaking to you soon.
                 </div>
             </div>
-            <i class="fas fa-times modal__exit click"></i>
         </div>
     </section>
     <section id="projects">

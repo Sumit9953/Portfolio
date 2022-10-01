@@ -60,8 +60,8 @@ button{
 }
 section{
     background-color: rgb(245,245,245);
+    transition: all 300ms ease;
 }
-
 .container{
     padding: 50px 0;
     width: 100%;
@@ -102,6 +102,9 @@ section{
 }
 .link__hover-effect--black::after{
     background-color: #242424;
+}
+.dark-theme .link__hover-effect--black::after{
+    background-color: #fff;
 }
 .link__hover-effect:hover:after{
     left: 0;
@@ -154,6 +157,47 @@ section{
     100%{
         transform: translateY(-3px);
     }
+}
+
+nav,
+.scroll,
+.header{
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms 800ms;
+}
+
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
+}
+
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub-title,
+.dark-theme .nav__link--anchor,
+.dark-theme .fa-adjust,
+.dark-theme .header__para{
+    color: #fff;
+}
+.dark-theme section{
+    background-color: #242424;
+}
+.dark-theme #personal-logo{
+    filter: invert(1);
+}
+.dark-theme .scroll__icon{
+    border-color: #fff;
+}
+.dark-theme .scroll__icon::after{
+    background-color: #fff;
+}
+.dark-theme .mail__btn{
+    background-color: #fff;
+    color: #242424;
 }
 /* Landing page */
 
@@ -208,19 +252,26 @@ nav{
     width: 90%;
     max-width: 1100px;
     height: 700px;
-    box-shadow: 0 20px 80px 0 rgba(0,0,0,0.55);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s,z-index 1s,box-shadow 0.5s ease;
+}
+.modal--open .modal{
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgba(0,0,0,0.55);
+    visibility: visible;
 }
 .modal_half{
     width: 50%;
     padding: 40px 72px;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    position: relative;
+    transition: all 300ms ease-in;
 }
 .modal__languages{
 display: flex;
@@ -251,13 +302,19 @@ flex-wrap: wrap;
 .modai__language--img{
     width: 100%;  
 }
-.modal_about{
-    background-color: rgba(245, 245,245);
-   
+.modal--open .modal_about,
+.modal--open .modal_contact{
+    transform: translateX(0%);
 }
+.modal_about{
+    background-color: rgba(245, 245,245);  
+    transform: translateX(-110%);
+}
+
 .modal_contact{
     background-color: #242424;
     color: white;
+    transform: translateX(110%);
 }
 .modal__title{
     font-size: 26px;
@@ -300,17 +357,18 @@ flex-wrap: wrap;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
+    z-index: -1;
+}
+.modal__overlay--visible{
+    z-index: 1;
+    display: flex;
 }
 .modal__overlay--loading{
     background-color: #242424;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 80px;
-    z-index: -1;
 }
 .modal__overlay--success{
     background-color: #4bb543;
