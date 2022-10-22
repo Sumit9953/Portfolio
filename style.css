@@ -15,6 +15,7 @@ li{
 a{
     text-decoration: none;
 }
+
 p{
     line-height: 1.5;
     font-size: 16px;
@@ -218,13 +219,13 @@ nav{
     max-width: 1200px;
     margin: 0 auto;
     height: 100px;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 
 #personal-logo{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 .nav__link--list{
@@ -537,39 +538,39 @@ footer{
 }
 .shape--0{
     top: 15vh;
-    left: 5vw;
+    left: 10vw;
 }
 .shape--1{
     top: 15vh;
-    left: 50vw;
+    left: 55vw;
 }
 .shape--2{
     top: 15vh;
-    left: 80vw;
+    left: 85vw;
 }
 .shape--3{
     top: 50vh;
-    left: 5vw;
+    left: 10vw;
 }
 .shape--4{
     top: 50vh;
-    left: 50vw;
+    left: 55vw;
 }
 .shape--5{
     top: 50vh;
-    left: 80vw;
+    left: 85vw;
 }
 .shape--6{
     top: 80vh;
-    left: 5vw;
+    left: 10vw;
 }
 .shape--7{
     top: 80vh;
-    left: 50vw;
+    left: 55vw;
 }
 .shape--8{
     top: 80vh;
-    left: 80vw;
+    left: 85vw;
 }
 
 
