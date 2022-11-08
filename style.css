@@ -517,8 +517,8 @@ footer{
 }
 .footer__img{
     filter: invert(1);
-    width: 70px;
-    height: 70px;
+    width: 120px;
+    height: 120px;
 }
 .footer__social--list{
     width: 100%;
