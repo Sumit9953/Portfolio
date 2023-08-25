@@ -1,5 +1,5 @@
 let isModalOpen = false;
-let contrastToggle = true;
+let contrastToggle = false;
 const scaleFcator = 1 / 20;
 
 function moveBackground(event){
